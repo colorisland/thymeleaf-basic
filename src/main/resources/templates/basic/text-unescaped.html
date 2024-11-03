@@ -2,12 +2,24 @@
 <html xmlns:th="http://www.thymeleaf.org" lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>HTML 이스케이프 기능</title>
+    <title>HTML 이스케이프 기능 없애기</title>
 </head>
 <body>
     <div>html에서는 부등호를 태그로 사용하는데 이걸 진짜 부등호 문자와 구별하기 위해 HTML엔티티라는 문자열로 치환한다.</div>
     <div>이것을 이스케이프라고 부른다.</div>
+    <div>이스케이프 처리를 하지 않는 방법은 2가지가 있다. utext, 괄호</div>
 
-    <li>th:text 사용<span th:text="${data}"></span></li>
+    <h1>text vs utext</h1>
+    <ul>
+    <li>th:text 사용: <span th:text="${data}"></span></li>
+    <li>th:utext 사용: <span th:utext="${data}"></span></li>
+    </ul>
+
+    <h1><span th:inline="none"> [[...]] vs [(...)] </span></h1>
+    <div> th:inline="none" 이것은 그냥 타임리프가 타임리프 문법을 해석하지 않게 하는 것이다.</div>
+    <ul>
+        <li><span th:inline="none"> [[...]] 사용: </span> [[${data}]]</li>
+        <li><span th:inline="none"> [(...)] 사용: </span> [(${data})]</li>
+    </ul>
 </body>
 </html>
