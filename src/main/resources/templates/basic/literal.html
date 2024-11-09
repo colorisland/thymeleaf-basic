@@ -1,0 +1,18 @@
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+</head>
+<body>
+<h1>리터럴</h1>
+<ul>
+  <!--주의! 다음 주석을 풀면 예외가 발생함-->
+  <!-- <li>"hello world!" = <span th:text="hello world!"></span></li>-->
+  <li>'hello' + ' world!' = <span th:text="'hello' + ' world!'"></span></li>
+  <li>'hello world!' = <span th:text="'hello world!'"></span></li>
+  <li>'hello ' + ${data} = <span th:text="'hello ' + ${data}"></span></li>
+<!-- 작은 따옴표로 더하는게 아니고 |로 대체해서 리터럴을 더한다. -->
+  <li>리터럴 대체 |hello ${data}| = <span th:text="|hello ${data}|"></span></li>
+</ul>
+</body>
+</html>
